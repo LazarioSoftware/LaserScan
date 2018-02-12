@@ -10,10 +10,9 @@ root.configure(bg='#313440')
 root.geometry('900x700') #Разрешение окна
 root.resizable(False, False) #запрет маштабирования п
 
-'''
-#файлы с граяическим созданием всех блоков, отдельно файл с классом  соединения всех блоков
-'''
 
+
+print("Tect")
 Menu=Face.TopMenu(root)
 Time=Face.ChangeTime(root)
 Set=Face.SetLog(root)
