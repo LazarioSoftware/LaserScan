@@ -73,7 +73,7 @@ class TopMenu:
             self.win.wait_window() # ждать, пока win не будет уничтожен
     def New_Change(self,event):
             self.win=Toplevel()
-        
+
 
             self.win.title("Начало смены")
             self.win.configure(bg='#313440')
@@ -81,13 +81,16 @@ class TopMenu:
             self.win.geometry('800x600+100+200')
 
             self.ip1=Entry(self.win, width=15, font=15)
-            self.iplable1=Label(self.win, text="",bg='#313440',fg='white').grid(row=0, column=0)
+            self.iplable1=Label(self.win, text="Введите имя оператора",bg='#313440',fg='white').grid(row=0, column=0)
 
             self.ip2=Entry(self.win, width=15, font=15)
-            self.iplable2=Label(self.win, text="IP датчика 2",bg='#313440',fg='white').grid(row=1, column=0)
+            self.iplable2=Label(self.win, text="Дата/Время начала смены",bg='#313440',fg='white').grid(row=1, column=0)
 
             self.ip3=Entry(self.win, width=15, font=15)
-            self.iplable3=Label(self.win, text="IP датчика 3",bg='#313440',fg='white').grid(row=2, column=0)
+            self.iplable3=Label(self.win, text="Дата/Время окончания смены",bg='#313440',fg='white').grid(row=2, column=0)
+
+            self.bt=Button(self.win,command=con_fig)
+            self.bt.grid(row=3,column=2)
 
             self.bt.grid(row=3,column=2)
 
