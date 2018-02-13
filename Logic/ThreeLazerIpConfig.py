@@ -5,7 +5,7 @@ import struct
 from math import *
 import sys
 import os
-sys.path.append(os.path.join(sys.path[0], '../../Dropbox/Front end/'))
+sys.path.append(os.path.join(sys.path[0], '../'))
 import Face
 
 
