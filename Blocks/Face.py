@@ -73,8 +73,7 @@ class TopMenu:
             self.win.wait_window() # ждать, пока win не будет уничтожен
     def New_Change(self,event):
             self.win=Toplevel()
-            self.bt=Button(self.win,command=con_fig)
-            self.bt.grid(row=3,column=2)
+            
 
             self.win.title("Начало смены")
             self.win.configure(bg='#313440')
@@ -89,6 +88,8 @@ class TopMenu:
 
             self.ip3=Entry(self.win, width=15, font=15)
             self.iplable3=Label(self.win, text="IP датчика 3",bg='#313440',fg='white').grid(row=2, column=0)
+
+            self.bt.grid(row=3,column=2)
 
             self.ip1.grid(row=0, column=1)
             self.ip2.grid(row=1, column=1)
