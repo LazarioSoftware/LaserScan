@@ -73,7 +73,11 @@ class TopMenu:
             self.win.wait_window() # ждать, пока win не будет уничтожен
     def New_Change(self,event):
             self.win=Toplevel()
+<<<<<<< HEAD
 
+=======
+            print("rkr")
+>>>>>>> 2eb615f2bd24df9ebcaa60473982e667b79668b1
 
             self.win.title("Начало смены")
             self.win.configure(bg='#313440')
