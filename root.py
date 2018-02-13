@@ -1,5 +1,7 @@
+# -*- coding: utf-8 -*-
 import tkinter as tk
 import sys
+import numpy
 import os
 sys.path.append(os.path.join(sys.path[0], '../../Dropbox/Front end/Blocks/'))
 import Face
