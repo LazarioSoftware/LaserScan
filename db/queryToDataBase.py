@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 import sqlite3 as lite
 import sys
 
@@ -11,7 +12,7 @@ def writeToDbChangeTime(operatorname,begindatetime,finishdatetime):
     except lite.Error:
         if conn:
             conn.rollback()
-        print ("Error %s:")
+        print ("Error")
         sys.exit(1)
     finally:
         if conn:
@@ -24,18 +25,18 @@ def writeToDbSetLog(seller,sellerpaper,transport,begindatetime):
     try:
         conn = lite.connect('data_writing.db')
         cursor = conn.cursor()
-        cursor.executescript("INSERT INTO set_log (seller,seller_paper,transport,begin_datetime) VALUES ('%s','%s','%s','%s')"%(seller,sellerpaper,transport,begindatetime))
+        cursor.executescript("""INSERT INTO set_log (seller,seller_paper,transport,begin_datetime) VALUES ('%s','%s','%s','%s')"""%(seller,sellerpaper,transport,begindatetime))
         conn.commit()
     except lite.Error:
         if conn:
             conn.rollback()
-        print ("Error %s:")
+        print ("Error")
         sys.exit(1)
     finally:
         if conn:
             conn.close()
 
-#цункция записи параметров бревна в базу данных
+#функция записи параметров бревна в базу данных
 def writeToDbLogs(codename,poroda,D,L,sbeg,kriv,Dmax,scanningdate):
     try:
         conn = lite.connect('data_writing.db')
@@ -45,8 +46,69 @@ def writeToDbLogs(codename,poroda,D,L,sbeg,kriv,Dmax,scanningdate):
     except lite.Error:
         if conn:
             conn.rollback()
-        print ("Error %s:")
+        print ("Error")
         sys.exit(1)
     finally:
         if conn:
             conn.close()
+
+
+#функция считывания данных о смене
+def readFromDbChangeTime():
+    try:
+        conn = lite.connect('data_writing.db')
+        cursor = conn.cursor()
+        cursor.execute('SELECT * FROM change_time WHERE id = (SELECT max(id) FROM change_time)')
+        conn.commit()
+        unitSetLog = cursor.fetchone()
+        return(unitChangeTime)
+    except lite.Error:
+        if conn:
+            conn.rollback()
+        print ("Error")
+        sys.exit(1)
+    finally:
+        if conn:
+            conn.close()
+
+
+#функция считывания данных о партии
+def readFromDbSetLog():
+    try:
+        conn = lite.connect('data_writing.db')
+        cursor = conn.cursor()
+        cursor.execute('SELECT * FROM set_log WHERE id = (SELECT max(id) FROM set_log)')
+        conn.commit()
+        unitSetLog = cursor.fetchone()
+        return(unitSetLog)
+    except lite.Error:
+        if conn:
+            conn.rollback()
+        print ("Error")
+        sys.exit(1)
+    finally:
+        if conn:
+            conn.close()
+
+
+#функция считывания данных о бревнах
+def readFromDbLogs():
+    try:
+        conn = lite.connect('data_writing.db')
+        cursor = conn.cursor()
+        cursor.execute('SELECT * FROM logs WHERE id = (SELECT max(id) FROM logs)')
+        conn.commit()
+        unitSetLog = cursor.fetchone()
+        return(unitLogs)
+    except lite.Error:
+        if conn:
+            conn.rollback()
+        print ("Error")
+        sys.exit(1)
+    finally:
+        if conn:
+            conn.close()
+
+
+d=readFromDbSetLog()
+print(d[1])
