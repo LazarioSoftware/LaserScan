@@ -58,7 +58,7 @@ def readFromDbChangeTime():
     try:
         conn = lite.connect('data_writing.db')
         cursor = conn.cursor()
-        cursor.execute('SELECT * FROM change_time WHERE id = (SELECT max(id) FROM change_time)')
+        cursor.execute('SELECT * FROM change_time ORDER BY rowid ASC LIMIT 1')
         conn.commit()
         unitSetLog = cursor.fetchone()
         return(unitChangeTime)
@@ -77,7 +77,7 @@ def readFromDbSetLog():
     try:
         conn = lite.connect('data_writing.db')
         cursor = conn.cursor()
-        cursor.execute('SELECT * FROM set_log WHERE id = (SELECT max(id) FROM set_log)')
+        cursor.execute('SELECT * FROM set_log ORDER BY rowid ASC LIMIT 1')
         conn.commit()
         unitSetLog = cursor.fetchone()
         return(unitSetLog)
@@ -96,7 +96,7 @@ def readFromDbLogs():
     try:
         conn = lite.connect('data_writing.db')
         cursor = conn.cursor()
-        cursor.execute('SELECT * FROM logs WHERE id = (SELECT max(id) FROM logs)')
+        cursor.execute('SELECT * FROM logs ORDER BY rowid ASC LIMIT 1')
         conn.commit()
         unitSetLog = cursor.fetchone()
         return(unitLogs)
@@ -108,7 +108,3 @@ def readFromDbLogs():
     finally:
         if conn:
             conn.close()
-
-
-d=readFromDbSetLog()
-print(d[1])
