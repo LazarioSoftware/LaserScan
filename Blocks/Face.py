@@ -6,6 +6,7 @@ import sys
 import os
 sys.path.append(os.path.join(sys.path[0], '../../../Документы/Projects/LaserScan/Logic/'))
 import ThreeLazerIpConfig
+import potok
 
 class TopMenu:
     def __init__(self, main):
@@ -107,7 +108,7 @@ class TopMenu:
     def Set(self,event):
             pass
     def Start(self,event):
-            pass
+            potok.coordinatStream()
     def Stop(self,event):
             pass
     def Reports(self,event):
