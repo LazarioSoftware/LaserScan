@@ -6,9 +6,7 @@ def writeToDbChangeTime(operatorname,begindatetime,finishdatetime):
     try:
         conn = lite.connect('data_writing.db')
         cursor = conn.cursor()
-        cursor.executescript("""
-            INSERT INTO change_time VALUES (NULL ,'begindatetime', 'finishdatetime', 'operatorname');
-            """)
+        cursor.executescript("INSERT INTO change_time (begin_datetime, finish_datetime, operator_name) VALUES ('%s','%s','%s')"%(begindatetime, finishdatetime, operator_name))
         conn.commit()
     except lite.Error:
         if conn:
@@ -19,14 +17,14 @@ def writeToDbChangeTime(operatorname,begindatetime,finishdatetime):
         if conn:
             conn.close()
 
+
+
 #функция записи партии в базу данных
 def writeToDbSetLog(seller,sellerpaper,transport,begindatetime):
     try:
         conn = lite.connect('data_writing.db')
         cursor = conn.cursor()
-        cursor.executescript("""
-            INSERT INTO setlog VALUES (NULL ,'seller', 'sellerpaper', 'transport','begindatetime');
-            """)
+        cursor.executescript("INSERT INTO set_log (seller,seller_paper,transport,begin_datetime) VALUES ('%s','%s','%s','%s')"%(seller,sellerpaper,transport,begindatetime))
         conn.commit()
     except lite.Error:
         if conn:
@@ -42,9 +40,7 @@ def writeToDbLogs(codename,poroda,D,L,sbeg,kriv,Dmax,scanningdate):
     try:
         conn = lite.connect('data_writing.db')
         cursor = conn.cursor()
-        cursor.executescript("""
-            INSERT INTO logs VALUES (NULL ,'codename', 'poroda', 'D','L','sbeg','kriv','Dmax','scanningdate');
-            """)
+        cursor.executescript("INSERT INTO logs (code_name, poroda, D, L, sbeg, kriv, Dmax, scannig_date) VALUES ('%s','%s','%s','%s','%s','%s','%s','%s')"%(codename,poroda,D,L,sbeg,kriv,Dmax,scanningdate))
         conn.commit()
     except lite.Error:
         if conn:
@@ -54,8 +50,3 @@ def writeToDbLogs(codename,poroda,D,L,sbeg,kriv,Dmax,scanningdate):
     finally:
         if conn:
             conn.close()
-
-operatorname = "Василий"
-begindatetime = "07:00 13/02/18"
-finishdatetime = "21:00 13/02/18"
-writeToDbChangeTime(operatorname,begindatetime,finishdatetime)
