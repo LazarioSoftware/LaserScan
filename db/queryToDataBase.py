@@ -149,3 +149,5 @@ def readFromDbIpAdress():
 
 
 print(readFromDbIpAdress())
+print(readFromDbSetLog())
+print(readFromDbLogs())
