@@ -129,7 +129,7 @@ def readFromDbLogs():
         if conn:
             conn.close()
 
-#функция считывания данных о IP адресах
+#функция считывания данных об IP адресах
 def readFromDbIpAdress():
     try:
         conn = lite.connect('data_writing.db')
@@ -146,6 +146,7 @@ def readFromDbIpAdress():
     finally:
         if conn:
             conn.close()
+
 
 
 print(readFromDbIpAdress())
