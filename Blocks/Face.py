@@ -5,7 +5,6 @@ import time
 #from TimeFun import tick
 
 class Blocks:
-
     def __init__(self, main):
         self.btn1=Button(main,text="Начать смену",bg='#262831',fg='#FFFFFF',font='arial 12')
         self.btn1.grid(row=0, column=0)
