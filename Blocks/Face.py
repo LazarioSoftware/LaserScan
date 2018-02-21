@@ -21,6 +21,7 @@ class Blocks:
         self.btn7=Button(main,text="Отчёты",bg='#262831',fg='#FFFFFF',font='arial 12')
         self.btn7.grid(row=0, column=6)
 
+
         self.btn1.bind("<Button-1>", Buttons.New_Change)
         self.btn2.bind("<Button-1>", Buttons.End_Change)
         self.btn3.bind("<Button-1>", Buttons.Set)

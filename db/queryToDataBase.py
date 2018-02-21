@@ -146,9 +146,3 @@ def readFromDbIpAdress():
     finally:
         if conn:
             conn.close()
-
-
-
-print(readFromDbIpAdress())
-print(readFromDbSetLog())
-print(readFromDbLogs())
