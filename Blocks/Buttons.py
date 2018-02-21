@@ -3,6 +3,8 @@ import datetime
 import time
 import sys
 import os
+sys.path.append(os.path.join(sys.path[0], '../../../Документы/Projects/LaserScan/db/'))
+import queryToDataBase
 
 def stay (win):
     win.focus_set() # принять фокус ввода,
@@ -44,19 +46,20 @@ def New_Change(i):
     win.resizable(False, False)
     win.geometry('800x600+180+110')
 
-    ip1=tk.Entry(win, width=15, font=15)
+    OperatorName=tk.Entry(win, width=15, font=15).grid(row=0, column=1)
     iplable1=tk.Label(win, text="Введите имя оператора",bg='#313440',fg='white').grid(row=0, column=0)
 
-    ip2=tk.Entry(win, width=15, font=15)
+    BeginDate=tk.Entry(win, width=15, font=15).grid(row=1, column=1)
     iplable2=tk.Label(win, text="Дата/Время начала смены",bg='#313440',fg='white').grid(row=1, column=0)
 
-    ip3=tk.Entry(win, width=15, font=15)
+    EndDate=tk.Entry(win, width=15, font=15).grid(row=2, column=1)
     iplable3=tk.Label(win, text="Дата/Время окончания смены",bg='#313440',fg='white').grid(row=2, column=0)
 
     bt=tk.Button(win)
-    bt.grid(row=3,column=2)
+    bt.grid(row=3,column=3)
+    btn1.bind("<Button-1>", queryToDataBase.writeToDbChangeTime(OperatorName.get(),BeginDate.get(),EndDate.get() ))
 
-    stay(win)
+    stay (win)
 
 
 
