@@ -6,10 +6,6 @@ import os
 sys.path.append(os.path.join(sys.path[0], '../../../Документы/Projects/LaserScan/Blocks/'))
 import Face
 
-
-
-
-
 root=tk.Tk()
 root.title("Lazario  alfa 0.1.0") #Название окна
 root.configure(bg='#313440')
