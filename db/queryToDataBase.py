@@ -2,6 +2,10 @@
 import sqlite3 as lite
 import sys
 
+
+
+def try1(i):
+    print(i)
 #функция записи начала смены в базу данных
 def writeToDbChangeTime(operatorname,begindatetime,finishdatetime):
     try:
