@@ -65,8 +65,7 @@ class New_Change:
         self.bt=tk.Button(self.win)
         self.bt.grid(row=3,column=3)
 
-        queryToDataBase.writeToDbChangeTime("txt1","3","2")
-        '''
+
         self.bt.bind("<Button-1>", self.dop)
 
     def dop(self,event):
@@ -75,7 +74,7 @@ class New_Change:
         txt3=self.EndDate.get()
         print(txt1,txt2,txt3)
         queryToDataBase.writeToDbChangeTime(txt1,txt2,txt3)
-        '''
+        
 
 def End_Change(self,event):
     pass
