@@ -34,6 +34,7 @@ def coordinatStream ():
         sock=socket.socket(socket.AF_INET,
                        socket.SOCK_DGRAM)
         sock.bind(adres)
+        
         def send (i,host,p):
             sock.sendto(i, (host1, p)) #отсылка команды
             i1, addr = sock.recvfrom(4104)

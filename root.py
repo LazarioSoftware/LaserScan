@@ -10,18 +10,9 @@ root=tk.Tk()
 root.title("Lazario  alfa 0.1.0") #Название окна
 root.configure(bg='#313440')
 root.geometry('900x700') #Разрешение окна
-root.resizable(False, False) #запрет маштабирования п
+root.resizable(False, False) #запрет маштабирования
 
 
-
-print("Tect")
-Menu=Face.TopMenu(root)
-Time=Face.ChangeTime(root)
-Set=Face.SetLog(root)
-Date=Face.DateTime(root)
-СurrentLog=Face.CurrentLog(root)
-
-
-IPcontroll=Face.IPcontrol(root)
+Win = Face.Blocks(root)
 
 root.mainloop()
