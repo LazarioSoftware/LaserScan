@@ -8,14 +8,10 @@ def try1(i):
     print(i)
 #функция записи начала смены в базу данных
 def writeToDbChangeTime(operatorname,begindatetime,finishdatetime):
-    print("inFun")
     try:
         conn = lite.connect('data_writing.db')
-        print("1")
         cursor = conn.cursor()
-        print("2")
         cursor.executescript("INSERT INTO change_time (begin_datetime, finish_datetime, operator_name) VALUES ('%s','%s','%s')"%(begindatetime, finishdatetime, operatorname))
-        print("3")
         conn.commit()
     except lite.Error:
         if conn:
@@ -25,7 +21,6 @@ def writeToDbChangeTime(operatorname,begindatetime,finishdatetime):
     finally:
         if conn:
             conn.close()
-
 
 
 #функция записи партии в базу данных

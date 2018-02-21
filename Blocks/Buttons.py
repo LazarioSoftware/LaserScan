@@ -3,8 +3,10 @@ import datetime
 import time
 import sys
 import os
+import sqlite3 as lite
 sys.path.append(os.path.join(sys.path[0], '../../../Документы/Projects/LaserScan/db/'))
 import queryToDataBase
+
 
 
 def stay (win):
