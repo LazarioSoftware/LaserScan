@@ -40,13 +40,16 @@ class Blocks:
         self.l2=Label(self.frame,text="Дата/время:",bg='#262831',fg='white',font=5).place(x=15, y=95)
         self.l2=Label(self.frame,text="Фамилия:",bg='#262831',fg='white',font=5).place(x=15, y=115)
 
-        DbSetLog=queryToDataBase.readFromDbSetLog()
-        self.l11=Label(self.frame,text=DbSetLog,bg='#262831',fg='white',font=5).place(x=150, y=75)
-        self.l21=Label(self.frame,text=DbSetLog,bg='#262831',fg='white',font=5).place(x=150, y=95)
-        self.l21=Label(self.frame,text=DbSetLog,bg='#262831',fg='white',font=5).place(x=150, y=115)
+
+        '''
+        def NewC_upload(self):
+            DbSetLog=queryToDataBase.readFromDbSetLog()
+            self.l11=Label(self.frame,text=DbSetLog,bg='#262831',fg='white',font=5).place(x=150, y=75)
+            self.l21=Label(self.frame,text=DbSetLog,bg='#262831',fg='white',font=5).place(x=150, y=95)
+            self.l21=Label(self.frame,text=DbSetLog,bg='#262831',fg='white',font=5).place(x=150, y=115)
+        '''
 
         self.SetLog_Block=Label(main, text="SetLog_Block",bg='#262831',fg='white').place(x=465, y=85,width=400, height=90)#Верхнее меню
-
         #Текущие бревно
         self.СurrentLog_Block=Label(main, bg='#262831',fg='white').place(x=15, y = 190 ,width=850, height=90)
         IndicatorBox_list=["Имя Бревна","Пoрода","D,mm","L,mm","Сбег","Кривизна %","V,m"]
@@ -95,3 +98,5 @@ class Blocks:
         self.ipVALUE1=Label(main, text="Error",bg='#313440',fg='red').place(x=30, y=670)
         self.ipVALUE2=Label(main, text="Error",bg='#313440',fg='red').place(x=410, y=675)
         self.ipVALUE3=Label(main, text="Error",bg='#313440',fg='red').place(x=780,y=670)
+    def tr (i):
+        print(i)
