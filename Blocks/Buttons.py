@@ -72,9 +72,8 @@ class New_Change:
         txt1=self.OperatorName.get()
         txt2=self.BeginDate.get()
         txt3=self.EndDate.get()
-        print(txt1,txt2,txt3)
         queryToDataBase.writeToDbChangeTime(txt1,txt2,txt3)
-        
+
 
 def End_Change(self,event):
     pass
