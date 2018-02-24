@@ -4,6 +4,7 @@ import time
 import sys
 import os
 import sqlite3 as lite
+import Face
 sys.path.append(os.path.join(sys.path[0], '../../../Документы/Projects/LaserScan/db/'))
 import queryToDataBase
 
@@ -82,9 +83,15 @@ class New_Change:
         txt3=self.EndDate.get()
         queryToDataBase.writeToDbChangeTime(txt1,txt2,txt3)
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+        Face.Blocks.tr(1)
+>>>>>>> 4752e19d01b20a5b8c311dfce1270b604dfdbb70
         self.win.destroy()
 >>>>>>> cfc13ccf5f7f6a61dd4c6ab72002803d93766e9a
+
+
 
 
 def End_Change(self,event):
