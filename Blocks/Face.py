@@ -1,9 +1,10 @@
 from tkinter import *
-import sys
-import Buttons
 import time
-import sqlite3 as lite
-#from TimeFun import tick
+import os
+import sys
+sys.path.append(os.path.join(sys.path[0], '../../../Документы/Projects/LaserScan/db/'))
+import queryToDataBase
+import Buttons
 
 class Blocks:
     def __init__(self, main):
@@ -39,9 +40,10 @@ class Blocks:
         self.l2=Label(self.frame,text="Дата/время:",bg='#262831',fg='white',font=5).place(x=15, y=95)
         self.l2=Label(self.frame,text="Фамилия:",bg='#262831',fg='white',font=5).place(x=15, y=115)
 
-                #l11=Label(self.frame,text="...:",bg='#262831',fg='white',font=5).place(x=15, y=75)
-                #l21=Label(self.frame,text="....",bg='#262831',fg='white',font=5).place(x=15, y=95)
-                #l21=Label(self.frame,text="Фамилие:",bg='#262831',fg='white',font=5).place(x=15, y=115)
+        DbSetLog=queryToDataBase.readFromDbSetLog()
+        self.l11=Label(self.frame,text=DbSetLog,bg='#262831',fg='white',font=5).place(x=150, y=75)
+        self.l21=Label(self.frame,text=DbSetLog,bg='#262831',fg='white',font=5).place(x=150, y=95)
+        self.l21=Label(self.frame,text=DbSetLog,bg='#262831',fg='white',font=5).place(x=150, y=115)
 
         self.SetLog_Block=Label(main, text="SetLog_Block",bg='#262831',fg='white').place(x=465, y=85,width=400, height=90)#Верхнее меню
 

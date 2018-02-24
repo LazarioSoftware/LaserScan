@@ -39,7 +39,10 @@ def Settings(i):
     ip2.grid(row=1, column=1)
     ip3.grid(row=2, column=1)
 
-    stay(win)
+    win.focus_set() # принять фокус ввода,
+    win.grab_set()  # запретить доступ к др. окнам, пока открыт диалог
+    win.wait_window() # ждать, пока win не будет уничтожен
+
 class New_Change:
     def __init__(self, main):
 
@@ -62,17 +65,26 @@ class New_Change:
         self.EndDate.grid(row=2, column=1)
         self.iplable3=tk.Label(self.win, text="Дата/Время окончания смены",bg='#313440',fg='white').grid(row=2, column=0)
 
-        self.bt=tk.Button(self.win)
-        self.bt.grid(row=3,column=3)
+        self.bt=tk.Button(self.win,text="применить")
+        self.bt.place(x=670, y=550,width=120, height=30)
 
 
         self.bt.bind("<Button-1>", self.dop)
+
+        self.win.wait_visibility() # window needs to be visible for the grab
+        self.win.focus_set() # принять фокус ввода,
+        self.win.grab_set()  # запретить доступ к др. окнам, пока открыт диалог
+        self.win.wait_window() # ждать, пока win не будет уничтожен
 
     def dop(self,event):
         txt1=self.OperatorName.get()
         txt2=self.BeginDate.get()
         txt3=self.EndDate.get()
         queryToDataBase.writeToDbChangeTime(txt1,txt2,txt3)
+<<<<<<< HEAD
+=======
+        self.win.destroy()
+>>>>>>> cfc13ccf5f7f6a61dd4c6ab72002803d93766e9a
 
 
 def End_Change(self,event):
