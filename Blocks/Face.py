@@ -23,6 +23,8 @@ class Blocks:
         self.btn7=Button(main,text="Отчёты",bg='#262831',fg='#FFFFFF',font='arial 12')
         self.btn7.grid(row=0, column=6)
 
+        self.btn8=Button(main,text="Обновить",bg='#262831',fg='#FFFFFF',font='arial 12')
+        self.btn8.grid(row=0, column=7)
 
         self.btn1.bind("<Button-1>", Buttons.New_Change)
         self.btn2.bind("<Button-1>", Buttons.End_Change)
@@ -31,26 +33,59 @@ class Blocks:
         self.btn5.bind("<Button-1>", Buttons.Start)
         self.btn6.bind("<Button-1>", Buttons.Stop)
         self.btn7.bind("<Button-1>", Buttons.Reports)
+        self.btn8.bind("<Button-1>", self.update_config)
 
 
-        self.frame=Frame(main,bg='#262831',).place(x=15, y=55,width=400, height=90)
-        self.l0=Label(self.frame,text="Начало смены",bg='#262831',fg='white').place(x=15, y=55)
+#Начало смены
+        self.frame=Frame(main,bg='#262831',).place(x=15, y=55,width=400, height=110)
+        self.ChTimeLabel=Label(self.frame,text="Начало смены",bg='#262831',fg='white').place(x=15, y=55)
 
-        self.l1=Label(self.frame,text="Номер смены:",bg='#262831',fg='white',font=5).place(x=15, y=75)
-        self.l2=Label(self.frame,text="Дата/время:",bg='#262831',fg='white',font=5).place(x=15, y=95)
-        self.l2=Label(self.frame,text="Фамилия:",bg='#262831',fg='white',font=5).place(x=15, y=115)
+        self.ChTime1=Label(self.frame,text="Номер смены:",bg='#262831',fg='white',font=5).place(x=15, y=75)
+        self.ChTime2=Label(self.frame,text="Дата/время начала:",bg='#262831',fg='white',font=5).place(x=15, y=95)
+        self.ChTime3=Label(self.frame,text="Дата/время окончания:",bg='#262831',fg='white',font=5).place(x=15, y=115)
+        self.ChTime4=Label(self.frame,text="Фамилия:",bg='#262831',fg='white',font=5).place(x=15, y=135)
+
+        self.ChTime11=Label(self.frame,text=".....",bg='#262831',fg='white',font=5)
+        self.ChTime11.place(x=230, y=75)
+
+        self.ChTime12=Label(self.frame,text=".....",bg='#262831',fg='white',font=5)
+        self.ChTime12.place(x=230, y=95)
+
+        self.ChTime13=Label(self.frame,text=".....",bg='#262831',fg='white',font=5)
+        self.ChTime13.place(x=230, y=115)
+
+        self.ChTime14=Label(self.frame,text=".....",bg='#262831',fg='white',font=5)
+        self.ChTime14.place(x=230, y=135)
 
 
-        '''
-        def NewC_upload(self):
-            DbSetLog=queryToDataBase.readFromDbSetLog()
-            self.l11=Label(self.frame,text=DbSetLog,bg='#262831',fg='white',font=5).place(x=150, y=75)
-            self.l21=Label(self.frame,text=DbSetLog,bg='#262831',fg='white',font=5).place(x=150, y=95)
-            self.l21=Label(self.frame,text=DbSetLog,bg='#262831',fg='white',font=5).place(x=150, y=115)
-        '''
+#Партия Брёвен
+        self.SetLog_Block=Label(main,bg='#262831',fg='white').place(x=465, y=55,width=400, height=130)
+        self.SetLogLabel=Label(self.frame,text="Партия",bg='#262831',fg='white').place(x=465, y=55)
 
-        self.SetLog_Block=Label(main, text="SetLog_Block",bg='#262831',fg='white').place(x=465, y=85,width=400, height=90)#Верхнее меню
-        #Текущие бревно
+        self.SetLog1=Label(self.frame,text="Номер партии:",bg='#262831',fg='white',font=1).place(x=465, y=75)
+        self.SetLog2=Label(self.frame,text="Продовец",bg='#262831',fg='white',font=1).place(x=465, y=95)
+        self.SetLog3=Label(self.frame,text="Накладная",bg='#262831',fg='white',font=1).place(x=465, y=115)
+        self.SetLog4=Label(self.frame,text="Транспорт",bg='#262831',fg='white',font=1).place(x=465, y=135)
+        self.SetLog5=Label(self.frame,text="Дата/время прибытия",bg='#262831',fg='white',font=1).place(x=465, y=155)
+
+
+        self.SetLog11=Label(self.frame,text=".....",bg='#262831',fg='white',font=1)
+        self.SetLog11.place(x=695, y=75)
+
+        self.SetLog12=Label(self.frame,text=".....",bg='#262831',fg='white',font=1)
+        self.SetLog12.place(x=695, y=95)
+
+        self.SetLog13=Label(self.frame,text=".....",bg='#262831',fg='white',font=1)
+        self.SetLog13.place(x=695, y=115)
+
+        self.SetLog14=Label(self.frame,text=".....",bg='#262831',fg='white',font=1)
+        self.SetLog14.place(x=695, y=135)
+
+        self.SetLog15=Label(self.frame,text=".....",bg='#262831',fg='white',font=5)
+        self.SetLog15.place(x=695, y=155)
+
+
+
         self.СurrentLog_Block=Label(main, bg='#262831',fg='white').place(x=15, y = 190 ,width=850, height=90)
         IndicatorBox_list=["Имя Бревна","Пoрода","D,mm","L,mm","Сбег","Кривизна %","V,m"]
         n=0
@@ -98,5 +133,17 @@ class Blocks:
         self.ipVALUE1=Label(main, text="Error",bg='#313440',fg='red').place(x=30, y=670)
         self.ipVALUE2=Label(main, text="Error",bg='#313440',fg='red').place(x=410, y=675)
         self.ipVALUE3=Label(main, text="Error",bg='#313440',fg='red').place(x=780,y=670)
-    def tr (i):
-        print(i)
+
+    def update_config (self, event):
+        DbChangeTime=queryToDataBase.readFromDbChangeTime()
+        self.ChTime11.configure(text=DbChangeTime[0])#номер смены
+        self.ChTime12.configure(text=DbChangeTime[1])#начало
+        self.ChTime13.configure(text=DbChangeTime[2])#окончание
+        self.ChTime14.configure(text=DbChangeTime[3])#фамилие
+
+        DbSetLog=queryToDataBase.readFromDbSetLog()
+        self.SetLog11.configure(text=DbSetLog[0])#номер партии
+        self.SetLog12.configure(text=DbSetLog[1])#продавец
+        self.SetLog13.configure(text=DbSetLog[2])#Накладная
+        self.SetLog14.configure(text=DbSetLog[3])#транспорт
+        self.SetLog15.configure(text=DbSetLog[4])#Дата/время

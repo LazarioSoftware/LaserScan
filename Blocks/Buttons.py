@@ -82,10 +82,21 @@ class New_Change:
         txt2=self.BeginDate.get()
         txt3=self.EndDate.get()
         queryToDataBase.writeToDbChangeTime(txt1,txt2,txt3)
+<<<<<<< HEAD
         Face.Blocks.tr(1)
 
+=======
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+<<<<<<< HEAD
+=======
+=======
+        Face.Blocks.tr(1)
+>>>>>>> 4752e19d01b20a5b8c311dfce1270b604dfdbb70
+>>>>>>> 20acd9d199b6a910dec89d9ccda1e6d5625ca63f
+>>>>>>> 3c3ab2430ab6a19ce8358e6fc5fea515d61091a9
         self.win.destroy()
-
 
 
 
