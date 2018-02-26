@@ -34,10 +34,10 @@ def metodVerhDiamV (L,dVerh,Dnizh): # на в взод в мм принимае�
 
 
 
-L=5
-dVerh = 6.5
-Dnizh = 6
-dSred=6.3
+L=20099
+dVerh = 67899.68
+Dnizh = 97499.35
+dSred=12499.789
 
 print("V концевых сечений = ", metodKoncSechV(L,dVerh,Dnizh), " метров3")
 print("V срединного сечения = ", metodSredSechV(L,dSred), "метров3")
