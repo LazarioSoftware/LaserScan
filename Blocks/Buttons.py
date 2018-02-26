@@ -81,9 +81,18 @@ class New_Change:
         txt1=self.OperatorName.get()
         txt2=self.BeginDate.get()
         txt3=self.EndDate.get()
-        print(txt1,txt2,txt3)
         queryToDataBase.writeToDbChangeTime(txt1,txt2,txt3)
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+<<<<<<< HEAD
+=======
+=======
+        Face.Blocks.tr(1)
+>>>>>>> 4752e19d01b20a5b8c311dfce1270b604dfdbb70
+>>>>>>> 20acd9d199b6a910dec89d9ccda1e6d5625ca63f
         self.win.destroy()
+>>>>>>> cfc13ccf5f7f6a61dd4c6ab72002803d93766e9a
 
 
 
