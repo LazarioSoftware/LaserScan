@@ -14,7 +14,6 @@ def stay (win):
     win.focus_set() # принять фокус ввода,
     win.grab_set()  # запретить доступ к др. окнам, пока открыт диалог
     win.wait_window() # ждать, пока win не будет уничтожен
-
 def Settings(i):
     win=tk.Toplevel()
     #параметры окна
@@ -43,7 +42,6 @@ def Settings(i):
     win.focus_set() # принять фокус ввода,
     win.grab_set()  # запретить доступ к др. окнам, пока открыт диалог
     win.wait_window() # ждать, пока win не будет уничтожен
-
 class New_Change:
     def __init__(self, main):
 
@@ -85,11 +83,61 @@ class New_Change:
         self.win.destroy()
 
 
+class SetLog:
+    def __init__(self, main):
+
+        self.win=tk.Toplevel()
+        #параметры окна
+        self.win.title("Партия")
+        self.win.configure(bg='#313440')
+        self.win.resizable(False, False)
+        self.win.geometry('800x600+180+110')
+
+        self.NameSeller=tk.Entry(self.win, width=15, font=15)
+        self.NameSeller.grid(row=0, column=1)
+        self.lable1=tk.Label(self.win, text="Имя продавца",bg='#313440',fg='white').grid(row=0, column=0)
+
+        self.Bill=tk.Entry(self.win, width=15, font=15)
+        self.Bill.grid(row=1, column=1)
+        self.lable2=tk.Label(self.win, text="Накладная",bg='#313440',fg='white').grid(row=1, column=0)
+
+        self.transport=tk.Entry(self.win, width=15, font=15)
+        self.transport.grid(row=2, column=1)
+        self.lable3=tk.Label(self.win, text="Транспорт",bg='#313440',fg='white').grid(row=2, column=0)
+
+        self.Date=tk.Entry(self.win, width=15, font=15)
+        self.Date.grid(row=3, column=1)
+        self.lable3=tk.Label(self.win, text="Дата/время прибытия",bg='#313440',fg='white').grid(row=3, column=0)
+
+
+        self.bt=tk.Button(self.win,text="применить")
+        self.bt.place(x=670, y=550,width=120, height=30)
+
+
+        self.bt.bind("<Button-1>", self.dop)
+
+        self.win.wait_visibility() # window needs to be visible for the grab
+        self.win.focus_set() # принять фокус ввода,
+        self.win.grab_set()  # запретить доступ к др. окнам, пока открыт диалог
+        self.win.wait_window() # ждать, пока win не будет уничтожен
+
+    def dop(self,event):
+        txt1=self.NameSeller.get()
+        txt2=self.Bill.get()
+        txt3=self.transport.get()
+        txt4=self.Date.get()
+        queryToDataBase.writeToDbSetLog(txt1,txt2,txt3,txt4)
+        self.win.destroy()
+
+
+
+
+
+
+
 
 
 def End_Change(self,event):
-    pass
-def Set(self,event):
     pass
 def Start(self,event):
     potok.coordinatStream()
