@@ -28,7 +28,7 @@ class Blocks:
 
         self.btn1.bind("<Button-1>", Buttons.New_Change)
         self.btn2.bind("<Button-1>", Buttons.End_Change)
-        self.btn3.bind("<Button-1>", Buttons.Set)
+        self.btn3.bind("<Button-1>", Buttons.SetLog)
         self.btn4.bind("<Button-1>", Buttons.Settings)
         self.btn5.bind("<Button-1>", Buttons.Start)
         self.btn6.bind("<Button-1>", Buttons.Stop)
