@@ -5,7 +5,7 @@ import sys
 import os
 import sqlite3 as lite
 import Face
-sys.path.append(os.path.join(sys.path[0], '../../../Документы/Projects/LaserScan/db/'))
+sys.path.append(os.path.join(sys.path[0], '../../../Documents/Projects/LaserScan/db/'))
 import queryToDataBase
 
 
@@ -128,7 +128,6 @@ class SetLog:
         txt4=self.Date.get()
         queryToDataBase.writeToDbSetLog(txt1,txt2,txt3,txt4)
         self.win.destroy()
-
 
 
 

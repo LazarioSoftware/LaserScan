@@ -3,7 +3,7 @@ import tkinter as tk
 import sys
 import numpy
 import os
-sys.path.append(os.path.join(sys.path[0], '../../../Документы/Projects/LaserScan/Blocks/'))
+sys.path.append(os.path.join(sys.path[0], '../../../Documents/Projects/LaserScan/Blocks/'))
 import Face
 
 root=tk.Tk()

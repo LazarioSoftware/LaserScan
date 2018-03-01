@@ -2,7 +2,7 @@ from tkinter import *
 import time
 import os
 import sys
-sys.path.append(os.path.join(sys.path[0], '../../../Документы/Projects/LaserScan/db/'))
+sys.path.append(os.path.join(sys.path[0], '../../../Documents/Projects/LaserScan/db/'))
 import queryToDataBase
 import Buttons
 
@@ -86,12 +86,21 @@ class Blocks:
 
 
 
+<<<<<<< HEAD
         self.СurrentLog_Block=Label(main, bg='#262831',fg='white').place(x=15, y = 200 ,width=850, height=90)
         IndicatorBox_list=["Имя Бревна","Пoрода","D,mm","L,mm","Сбег","Кривизна %","V,m"]
         n=0
         for i in IndicatorBox_list:
             la1=Label(main, text=i)
             la1.place(x=15+n, y =200)
+=======
+        self.СurrentLog_Block=Label(main, bg='#262831',fg='white').place(x=15, y = 220 ,width=850, height=90)
+        IndicatorBox_list=["Имя Бревна","Пoрода","D,mm","L,mm","Сбег","Кривизна %","V,m"]
+        n=0
+        for i in IndicatorBox_list:
+            la1=Label(main, text=i, bg='#262831', fg='white')
+            la1.place(x=15+n, y =225)
+>>>>>>> 0c8a681525322cca5ad1585a76549c6539e0ae13
             n=n+137
 
 #Таблица Брёвна
