@@ -37,13 +37,13 @@ class Blocks:
 
 
 #Начало смены
-        self.frame=Frame(main,bg='#262831',).place(x=15, y=55,width=400, height=110)
-        self.ChTimeLabel=Label(self.frame,text="Начало смены",bg='#262831',fg='white').place(x=15, y=55)
+        self.frame=Frame(main,bg='#262831',).place(x=15, y=55,width=400, height=130)
+        self.ChTimeLabel=Label(self.frame,text="Начало смены",bg='#262831',fg='white').place(x=30, y=55)
 
-        self.ChTime1=Label(self.frame,text="Номер смены:",bg='#262831',fg='white',font=5).place(x=15, y=75)
-        self.ChTime2=Label(self.frame,text="Дата/время начала:",bg='#262831',fg='white',font=5).place(x=15, y=95)
-        self.ChTime3=Label(self.frame,text="Дата/время окончания:",bg='#262831',fg='white',font=5).place(x=15, y=115)
-        self.ChTime4=Label(self.frame,text="Фамилия:",bg='#262831',fg='white',font=5).place(x=15, y=135)
+        self.ChTime1=Label(self.frame,text="Номер смены:",bg='#262831',fg='white',font=5).place(x=30, y=75)
+        self.ChTime2=Label(self.frame,text="Дата/время начала:",bg='#262831',fg='white',font=5).place(x=30, y=95)
+        self.ChTime3=Label(self.frame,text="Дата/время окончания:",bg='#262831',fg='white',font=5).place(x=30, y=115)
+        self.ChTime4=Label(self.frame,text="Фамилия:",bg='#262831',fg='white',font=5).place(x=30, y=135)
 
         self.ChTime11=Label(self.frame,text=".....",bg='#262831',fg='white',font=5)
         self.ChTime11.place(x=230, y=75)
@@ -59,7 +59,7 @@ class Blocks:
 
 
 #Партия Брёвен
-        self.SetLog_Block=Label(main,bg='#262831',fg='white').place(x=465, y=55,width=400, height=130)
+        self.SetLog_Block=Label(main,bg='#262831',fg='white').place(x=450, y=55,width=415, height=130)
         self.SetLogLabel=Label(self.frame,text="Партия",bg='#262831',fg='white').place(x=465, y=55)
 
         self.SetLog1=Label(self.frame,text="Номер партии:",bg='#262831',fg='white',font=1).place(x=465, y=75)
@@ -86,18 +86,18 @@ class Blocks:
 
 
 
-        self.СurrentLog_Block=Label(main, bg='#262831',fg='white').place(x=15, y = 190 ,width=850, height=90)
+        self.СurrentLog_Block=Label(main, bg='#262831',fg='white').place(x=15, y = 200 ,width=850, height=90)
         IndicatorBox_list=["Имя Бревна","Пoрода","D,mm","L,mm","Сбег","Кривизна %","V,m"]
         n=0
         for i in IndicatorBox_list:
             la1=Label(main, text=i)
-            la1.place(x=15+n, y =190)
+            la1.place(x=15+n, y =200)
             n=n+137
 
+#Таблица Брёвна
+        #self.place=self.Canvas(main, bg='#262831',fg='white').place(x=150, y = 200 ,width=850, height=90)
 
         '''
-        class TotalLog:
-            pass
         class Trancporter:
             pass
         class Errors:
