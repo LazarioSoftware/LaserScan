@@ -58,6 +58,7 @@ class Blocks:
         self.ChTime14.place(x=230, y=135)
 
 
+
 #Партия Брёвен
         self.SetLog_Block=Label(main,bg='#262831',fg='white').place(x=450, y=55,width=415, height=130)
         self.SetLogLabel=Label(self.frame,text="Партия",bg='#262831',fg='white').place(x=465, y=55)
@@ -85,34 +86,42 @@ class Blocks:
         self.SetLog15.place(x=695, y=155)
 
 
-
-<<<<<<< HEAD
-        self.СurrentLog_Block=Label(main, bg='#262831',fg='white').place(x=15, y = 200 ,width=850, height=90)
-        IndicatorBox_list=["Имя Бревна","Пoрода","D,mm","L,mm","Сбег","Кривизна %","V,m"]
-        n=0
-        for i in IndicatorBox_list:
-            la1=Label(main, text=i)
-            la1.place(x=15+n, y =200)
-=======
         self.СurrentLog_Block=Label(main, bg='#262831',fg='white').place(x=15, y = 220 ,width=850, height=90)
         IndicatorBox_list=["Имя Бревна","Пoрода","D,mm","L,mm","Сбег","Кривизна %","V,m"]
         n=0
         for i in IndicatorBox_list:
             la1=Label(main, text=i, bg='#262831', fg='white')
             la1.place(x=15+n, y =225)
->>>>>>> 0c8a681525322cca5ad1585a76549c6539e0ae13
             n=n+137
 
 #Таблица Брёвна
-        #self.place=self.Canvas(main, bg='#262831',fg='white').place(x=150, y = 200 ,width=850, height=90)
+        self.canvas = Canvas(main, width=900, height=300, bg='#313440')
+        self.canvas.place(x=0,y=300)
 
-        '''
-        class Trancporter:
-            pass
-        class Errors:
-            pass
-        '''
+        for y in range(12):
+            k = 78 * y
+            self.canvas.create_line(20+k, 277, 20+k, 20, width=2, fill= '#666')
 
+        for x in range(9):
+            k = 32 * x
+            self.canvas.create_line(20, 20+k, 877, 20+k, width=2, fill= '#666')
+        color='#313440'
+        w=60
+        h=25
+        ystr=322
+        xstr=25
+
+        self.stat=Label(main,text="Статус", bg=color,fg='white').place(x=xstr, y=ystr,width=w, height=h)
+        self.pocket=Label(main,text="Карман", bg=color,fg='white').place(x=xstr+80, y = ystr ,width=w, height=h)
+        self.poroda=Label(main,text="Породоа", bg=color,fg='white').place(x=xstr+160, y = ystr ,width=w, height=h)
+        self.diametr=Label(main,text="D,mm", bg=color,fg='white').place(x=xstr+240, y = ystr ,width=w, height=h)
+        self.len=Label(main,text="L,mm", bg=color,fg='white').place(x=xstr+320, y = ystr ,width=w, height=h)
+        self.sbeg=Label(main,text="Сбег", bg=color,fg='white').place(x=xstr, y = ystr ,width=w, height=h)
+        self.kriv=Label(main,text="Кривизна", bg=color,fg='white').place(x=xstr, y = ystr ,width=w, height=h)
+        self.amount=Label(main,text="V,mm3", bg=color,fg='white').place(x=xstr, y = ystr ,width=w, height=h)
+        self.time=Label(main,text="None", bg=color,fg='white').place(x=xstr, y = ystr ,width=w, height=h)
+        self.time=Label(main,text="None", bg=color,fg='white').place(x=xstr, y = ystr ,width=w, height=h)
+        self.time=Label(main,text="None", bg=color,fg='white').place(x=xstr, y = ystr ,width=w, height=h)
 
         #дата и время
         self.clock_frame=Label(main,height=7,width=7,bg='#262831',fg='#FFFFFF',font=15)
