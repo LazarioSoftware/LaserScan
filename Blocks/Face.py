@@ -105,24 +105,41 @@ class Blocks:
         for x in range(9):
             k = 32 * x
             self.canvas.create_line(20, 20+k, 877, 20+k, width=2, fill= '#666')
-        color='#313440'
-        w=60
+
+
+
+
+        LabelTabel_list=["Статус","Карман","Порода","L,mm","D,mm","Сбег","Кривизна","V,mm3","None","None","None"]
+        n=0
+        w=75
         h=25
         ystr=322
-        xstr=25
+        xstr=21
+        for i in LabelTabel_list:
+            la1=Label(main, text=i, bg='#313440', fg='white')
+            la1.place(x=xstr+n, y=ystr,width=w, height=h)
+            n=n+78
 
+
+        '''    
+        color='#FFFFFF'
+        w=70
+        h=28
+        ystr=322
+        xstr=22
+        #313440
         self.stat=Label(main,text="Статус", bg=color,fg='white').place(x=xstr, y=ystr,width=w, height=h)
-        self.pocket=Label(main,text="Карман", bg=color,fg='white').place(x=xstr+80, y = ystr ,width=w, height=h)
-        self.poroda=Label(main,text="Породоа", bg=color,fg='white').place(x=xstr+160, y = ystr ,width=w, height=h)
+        self.pocket=Label(main,text="Карман", bg=color,fg='white').place(x=100, y = ystr ,width=w, height=h)
+        self.poroda=Label(main,text="Порода", bg=color,fg='white').place(x=xstr+160, y = ystr ,width=w, height=h)
         self.diametr=Label(main,text="D,mm", bg=color,fg='white').place(x=xstr+240, y = ystr ,width=w, height=h)
         self.len=Label(main,text="L,mm", bg=color,fg='white').place(x=xstr+320, y = ystr ,width=w, height=h)
-        self.sbeg=Label(main,text="Сбег", bg=color,fg='white').place(x=xstr, y = ystr ,width=w, height=h)
-        self.kriv=Label(main,text="Кривизна", bg=color,fg='white').place(x=xstr, y = ystr ,width=w, height=h)
-        self.amount=Label(main,text="V,mm3", bg=color,fg='white').place(x=xstr, y = ystr ,width=w, height=h)
-        self.time=Label(main,text="None", bg=color,fg='white').place(x=xstr, y = ystr ,width=w, height=h)
-        self.time=Label(main,text="None", bg=color,fg='white').place(x=xstr, y = ystr ,width=w, height=h)
-        self.time=Label(main,text="None", bg=color,fg='white').place(x=xstr, y = ystr ,width=w, height=h)
-
+        self.sbeg=Label(main,text="Сбег", bg=color,fg='white').place(x=xstr+400, y = ystr ,width=w, height=h)
+        self.kriv=Label(main,text="Кривизна", bg=color,fg='white').place(x=xstr+480, y = ystr ,width=w, height=h)
+        self.amount=Label(main,text="V,mm3", bg=color,fg='white').place(x=xstr+560, y = ystr ,width=w, height=h)
+        self.time=Label(main,text="None", bg=color,fg='white').place(x=xstr+640, y = ystr ,width=w, height=h)
+        self.time=Label(main,text="None", bg=color,fg='white').place(x=xstr+720, y = ystr ,width=w, height=h)
+        self.time=Label(main,text="None", bg=color,fg='white').place(x=xstr+800, y = ystr ,width=w, height=h)
+        '''
         #дата и время
         self.clock_frame=Label(main,height=7,width=7,bg='#262831',fg='#FFFFFF',font=15)
         self.clock_frame.place(x=465, y = 590 ,width=400, height=70)#Время и дата
